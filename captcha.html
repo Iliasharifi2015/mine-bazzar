@@ -42,9 +42,9 @@
 <body>
 
 <div class="box">
-    <h2>🤖 CAPTCHA</h2>
+    <h2>MINEBZ CAPTCHA</h2>
     <p id="question"></p>
-    <input type="number" id="answer" placeholder="جواب را بنویسید">
+    <input type="number" id="answer" placeholder="awnser">
     <button onclick="verify()">Verify</button>
     <p id="result" style="color:red; margin-top:10px;"></p>
 </div>
@@ -55,7 +55,7 @@
     let correct = n1 + n2;
 
     document.getElementById("question").innerText =
-        "حاصل: " + n1 + " + " + n2 + " چیست؟";
+        "Awnser: " + n1 + " + " + n2;
 
     function verify() {
         let user = document.getElementById("answer").value;
@@ -66,7 +66,7 @@
             // یا میتونی بزاری: "readme.html"
         } else {
             document.getElementById("result").innerText =
-                "❌ کپچا اشتباهه دوباره امتحان کن!";
+                "❌ Captcha is incorrect. Try again!";
         }
     }
 </script>
