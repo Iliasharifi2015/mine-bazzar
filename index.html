@@ -14,13 +14,36 @@
     <meta property="og:image" content="https://cdn.modrinth.com/data/pZ2wrerK/eed7e2c9851392e5879c7d7cb763f142f124e6d2_96.webp">
     <meta name="robots" content="all">
     <style>
+
+        /* حالت دارک */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #334d00;
+    color: #ffffff;
+  }
+}
+
+            .box {
+            background: gray;
+        }
+
+/* حالت روشن */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff;
+    color: #aaff00;
+  }
+
+            .box {
+            background: gray;
+        }
+}
         body {
             font-family: sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: #aaff00;
             overflow: hidden;
         }
         .box {
