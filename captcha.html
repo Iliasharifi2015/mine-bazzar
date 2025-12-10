@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>Captcha Verification</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #eef2ff;
+        }
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 12px #0003;
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            padding: 8px;
+            width: 80%;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background: #4a6fff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>🤖 CAPTCHA</h2>
+    <p id="question"></p>
+    <input type="number" id="answer" placeholder="جواب را بنویسید">
+    <button onclick="verify()">Verify</button>
+    <p id="result" style="color:red; margin-top:10px;"></p>
+</div>
+
+<script>
+    let n1 = Math.floor(Math.random() * 10) + 1;
+    let n2 = Math.floor(Math.random() * 10) + 1;
+    let correct = n1 + n2;
+
+    document.getElementById("question").innerText =
+        "حاصل: " + n1 + " + " + n2 + " چیست؟";
+
+    function verify() {
+        let user = document.getElementById("answer").value;
+
+        if (Number(user) === correct) {
+            // اگر کپچا درست بود، برو به صفحه مورد نظر
+            window.location.href = "index.html"; 
+            // یا میتونی بزاری: "readme.html"
+        } else {
+            document.getElementById("result").innerText =
+                "❌ کپچا اشتباهه دوباره امتحان کن!";
+        }
+    }
+</script>
+
+</body>
+</html>
